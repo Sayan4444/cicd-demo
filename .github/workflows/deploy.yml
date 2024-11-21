@@ -24,4 +24,14 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: sayan4444/ci-cd-demo:latest # Replace with your Docker Hub username and repository
+        tags: sayan4444/ci-cd-demo:latest
+
+    - name: Deploy to DigitalOcean
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.DIGITAL_OCEAN_HOST }}
+        username: ${{ secrets.DIGITAL_OCEAN_USERNAME }}
+        key: ${{ secrets.DIGITAL_OCEAN_SSH_KEY }}
+        script: |
+            docker-compose pull nextjs-app
+            docker-compose up -d nextjs-app

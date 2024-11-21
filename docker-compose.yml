@@ -14,7 +14,6 @@ services:
 
   nextjs-app:
     image: sayan4444/ci-cd-demo:latest
-    # build: .
     ports:
       - "3000:3000"
     environment:
