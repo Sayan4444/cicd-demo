@@ -33,5 +33,6 @@ jobs:
         username: ${{ secrets.DIGITAL_OCEAN_USERNAME }}
         key: ${{ secrets.DIGITAL_OCEAN_SSH_KEY }}
         script: |
+            cd ci-cd-demo
             docker-compose pull nextjs-app
             docker-compose up -d nextjs-app
