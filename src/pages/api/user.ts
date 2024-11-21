@@ -5,6 +5,7 @@ type Data = {
   id: number;
   name: string;
   email: string;
+  role: string;
 }[];
 
 export default async function handler(
@@ -39,14 +40,17 @@ async function POST(req: NextApiRequest,
       {
         name: 'Alice',
         email: 'alice@example.com',
+        role: "ADMIN"
       },
       {
         name: 'Bob',
         email: 'bob@example.com',
+        role: "USER1"
       },
       {
         name: 'Charlie',
         email: 'charlie@example.com',
+        role: "USER1"
       },
     ],
   });
